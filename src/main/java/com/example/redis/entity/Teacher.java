@@ -1,24 +1,23 @@
 package com.example.redis.entity;
 
-import com.example.redis.enums.Gender;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.redis.core.RedisHash;
 
-import java.io.Serializable;
-
-@RedisHash("Student")
+@Entity
+@Table(name = "teacher")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Student implements Serializable {
+public class Teacher {
     @Id
     private String id;
     private String name;
-    private Gender gender;
-    private Integer grade;
+    private Double salary;
 }
