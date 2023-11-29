@@ -1,19 +1,17 @@
 package com.example.redis;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.connection.Message;
 import org.springframework.data.redis.connection.MessageListener;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Slf4j
 public class Receiver implements MessageListener {
-    private static final Logger LOGGER = LoggerFactory.getLogger(Receiver.class);
-
     private AtomicInteger counter = new AtomicInteger();
 
     public void receiveMessage(String message) {
-        LOGGER.info("HERE");
+        log.info("HERE");
     }
 
     public int getCount() {
@@ -22,7 +20,7 @@ public class Receiver implements MessageListener {
 
     @Override
     public void onMessage(Message message, byte[] pattern) {
-        LOGGER.info("Received <" + message + ">");
+        log.info("Received <" + message + ">");
         counter.incrementAndGet();
     }
 }
