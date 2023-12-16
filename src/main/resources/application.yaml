@@ -9,3 +9,11 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+  cache:
+    redis:
+      time-to-live: 1m
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+    producer:
+      bootstrap-servers: localhost:9092

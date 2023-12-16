@@ -1,6 +1,6 @@
 package com.example.redis.config;
 
-import com.example.redis.Receiver;
+import com.example.redis.redisBroker.Receiver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
